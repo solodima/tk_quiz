@@ -25,14 +25,3 @@ class QuizBrain:
             return True
         else:
             return False
-
-    def keep_score(self, score):
-        try:
-            with open('high_score.txt') as score_file:
-                high_score = score_file.read()
-        except FileNotFoundError:
-            pass
-        else:
-            if high_score < score:
-                with open('high_score.txt', 'w') as score_file:
-                    score_file.write(score)
